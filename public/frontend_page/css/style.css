@@ -1,0 +1,632 @@
+/* style.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=SUSE:wght@100..800&display=swap");
+
+html,
+body {
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+}
+
+.section-content {
+    padding: 5rem 0;
+}
+
+/* === NAVBAR === */
+.navbar {
+    background-color: #fff;
+}
+
+.nav-link {
+    font-size: 15px;
+    font-weight: 600;
+    color: #383838;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.hamburger {
+    height: 40px;
+    width: 40px;
+}
+
+.dropdown-item {
+    background-color: #f5f2f2;
+    color: #3c3c3c;
+}
+
+.dropdown-menu {
+    padding: 10px 20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3 ease-in-out;
+}
+
+.dropdown > .dropdown-menu {
+    background-color: #f5f2f2;
+    animation: infinite;
+}
+
+/* === BANNER === */
+#welcome {
+    margin-top: 80px;
+}
+
+.welcome-image-1 img {
+    margin-left: 30px;
+}
+
+.welcome-description {
+    margin-left: 40px;
+}
+
+.welcome-description h6 {
+    color: darkgoldenrod;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.welcome-description h1 {
+    color: rgb(50, 50, 50);
+    font-size: 55px;
+    letter-spacing: 1px;
+}
+
+.welcome-description h3 {
+    color: rgb(16, 16, 16);
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.welcome-description a {
+    background-color: darkgoldenrod;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    margin-top: 20px;
+}
+
+.welcome-description a:hover {
+    background-color: rgb(196, 159, 66);
+    color: #fff;
+    transition: all 0.3 ease-in-out;
+}
+
+#welcome {
+    background-color: #f3f9fb;
+    color: #3e4455;
+}
+
+/* === COUNTER === */
+#counter {
+    background-color: #171a67;
+    color: #fff;
+}
+
+.counter-value {
+    font-size: 40px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.counter-title {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#cover-caption {
+    width: 100%;
+}
+
+/* === testimonial carousel */
+.testimonial {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    padding: 50px 0;
+    overflow: hidden;
+}
+
+.testimonial .image {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.testimonial .slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.slide p {
+    padding: 0 160px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    color: #333;
+}
+
+.slide .quote-icon {
+    color: #4070f4;
+    font-size: 30px;
+}
+
+.slide .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details .name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.details .job {
+    font-size: 12px;
+    font-weight: 400;
+    color: #333;
+}
+
+.nav-btn {
+    border-radius: 50%;
+    transform: translateY(30px);
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 60px;
+    width: 60px;
+    transition: 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.nav-btn::after,
+.nav-btn::before {
+    color: #fff;
+    font-size: 25px;
+}
+
+.swiper-pagination-bullet {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #4070f4;
+}
+
+/* === SAMBUTAN KAPRODI */
+#greeting {
+    background-color: #1f1f1f;
+    padding: 70px 0;
+}
+
+#greeting img {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.greeting-caption h6 {
+    color: darkgoldenrod;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.greeting-caption h1 {
+    color: rgb(208, 208, 208);
+    font-size: 55px;
+    letter-spacing: 1px;
+}
+
+.greeting-caption h3 {
+    color: rgb(105, 105, 105);
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.greeting-caption p {
+    color: #fff;
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+.greeting-caption a {
+    background-color: darkgoldenrod;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 25px;
+    border-radius: 50px;
+}
+
+.greeting-caption a:hover {
+    background-color: rgb(196, 159, 66);
+    color: #fff;
+    transition: all 0.3 ease-in-out;
+}
+
+/* === POST === */
+#posts .post-cat {
+    color: rgb(122, 122, 122);
+}
+
+#posts .post-name {
+    color: rgb(122, 122, 122);
+}
+
+.btn-more-posts {
+    background-color: darkgoldenrod;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 25px;
+    border-radius: 50px;
+}
+
+.btn-more-posts:hover {
+    background-color: rgb(196, 159, 66);
+    color: #fff;
+    transition: all 0.3 ease-in-out;
+}
+
+/* === FEATURE === */
+#features {
+    padding-top: 10px;
+}
+
+.feature-caption h5 {
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+
+.feature-caption p {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgb(98, 98, 98);
+    letter-spacing: 0.4px;
+}
+
+/* === ADDMISSION === */
+#admission {
+    background: url("/media/assets/admission.jpg") center center no-repeat;
+    background-size: cover;
+    margin-top: 60px;
+}
+
+.admission-padding {
+    padding-top: 180px;
+    padding-bottom: 20px;
+}
+
+.admission-caption {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1.875rem;
+}
+
+.admission-caption h5 {
+    color: darkgoldenrod;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.admission-caption h1 {
+    color: #fff;
+    font-size: 37px;
+    letter-spacing: 0.5px;
+}
+
+.admission-caption a {
+    background-color: darkgoldenrod;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 25px;
+    border-radius: 50px;
+}
+
+.admission-caption a:hover {
+    background-color: rgb(196, 159, 66);
+    color: #fff;
+    transition: all 0.3 ease-in-out;
+}
+
+/* === FOOTER === */
+#footer-top {
+    background-color: #221b66;
+    color: #fff;
+    padding: 50px 0;
+}
+
+.footer-section p {
+    letter-spacing: 0.5px;
+}
+
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-section i {
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+#footer-down {
+    background-color: #0f084d;
+    color: #fff;
+}
+
+/* === SEJARAH PAGE */
+#about {
+    margin-top: 80px;
+}
+
+.about-header h6 {
+    color: darkgoldenrod;
+    letter-spacing: 1px;
+}
+
+.about-header h1 {
+    font-size: 50px;
+    letter-spacing: 1px;
+}
+
+.about-header hr {
+    color: darkgoldenrod;
+}
+
+/* === DOSEN PAGE === */
+.list-dosen:hover {
+    background-color: rgb(19, 27, 109);
+    transition: 0.5s ease-out;
+    color: #fff;
+}
+
+.list-dosen h5 {
+    font-size: 15px;
+}
+
+.list-dosen p {
+    font-size: 12px;
+    color: #959595;
+}
+
+.list-dosen p:hover {
+    color: #fff;
+}
+
+.dosen_link {
+    text-decoration: none;
+}
+
+/* === MOBILE RESPONSIVE === */
+@media (min-width: 360px) {
+    .welcome-image-1 {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 8px;
+        padding-right: 40px;
+    }
+
+    .welcome-image-2 {
+        text-align: center;
+    }
+
+    .welcome-description {
+        padding-top: 30px;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .welcome-description h1 {
+        font-size: 40px;
+    }
+
+    .welcome-description h3 {
+        font-size: 23px;
+    }
+
+    .counter-item {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .details .job {
+        text-align: center;
+    }
+
+    .greeting-caption {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .greeting-caption h1 {
+        font-size: 40px;
+    }
+
+    .greeting-caption h6 {
+        font-size: 15px;
+    }
+
+    .greeting-caption h3 {
+        font-size: 15px;
+    }
+
+    .admission-caption h1 {
+        font-size: 25px;
+    }
+
+    #footer-top hr:last-child {
+        margin-bottom: 80px;
+    }
+
+    /* === ABOUT PAGE === */
+    .about-header h6 {
+        font-size: 18px;
+    }
+
+    .about-header h1 {
+        font-size: 40px;
+    }
+
+    .about-header p {
+        padding: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .welcome-image-1 {
+        padding-left: 70px;
+    }
+
+    .welcome-description {
+        padding-top: 30px;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .counter-item {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .slide p {
+        font-size: 15px;
+    }
+
+    .details .name {
+        font-size: 25px;
+    }
+
+    .feature-caption p {
+        font-size: 18px;
+    }
+
+    .admission-caption h1 {
+        font-size: 28px;
+    }
+
+    /* === ABOUT PAGE === */
+    .about-header h1 {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 430px) {
+    .greeting-img {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .greeting-img {
+        text-align: center;
+        margin-top: 50px;
+    }
+}
+
+@media (min-width: 960px) {
+    .welcome-image-1 {
+        padding-left: 25px;
+        padding-right: 0px;
+    }
+
+    .welcome-description {
+        text-align: left;
+        padding-top: 0;
+        margin-left: 30px;
+    }
+
+    .counter-item {
+        text-align: left;
+        margin-bottom: 0;
+    }
+
+    .greeting-caption {
+        text-align: left;
+        margin-left: 0;
+    }
+
+    .greeting-caption h1 {
+        font-size: 56px;
+    }
+
+    .greeting-caption h6 {
+        font-size: 15px;
+    }
+
+    .greeting-caption h3 {
+        font-size: 20px;
+    }
+
+    .feature-caption p {
+        font-size: 15px;
+    }
+
+    .admission-caption h1 {
+        font-size: 40px;
+    }
+
+    #footer-top hr:last-child {
+        margin-bottom: 40px;
+    }
+
+    /* === ABOUT PAGE === */
+    .about-header h1 {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 992px) {
+    .dropdown > .dropdown-menu {
+        visibility: hidden;
+        opacity: 1;
+        top: 100%;
+        display: block;
+        transition: all 0.1 ease-out;
+    }
+
+    .dropdown:hover > .dropdown-menu {
+        padding: 20px 0;
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        transition: all 0.3 ease-in-out;
+    }
+
+    .dropdown-item:hover {
+        color: #0a12ee;
+        background-color: #fff;
+    }
+
+    /* === ABOUT PAGE === */
+    .about-header h1 {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .slide p {
+        padding: 0 20px;
+    }
+
+    .nav-btn {
+        display: none;
+    }
+}
