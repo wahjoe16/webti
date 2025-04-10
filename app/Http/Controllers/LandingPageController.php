@@ -10,6 +10,7 @@ use App\Models\History;
 use App\Models\Kaprodi;
 use App\Models\KelompokKeahlian;
 use App\Models\Lab;
+use App\Models\Matkul;
 use App\Models\Post;
 use App\Models\ProfilLulusan;
 use App\Models\Testimonial;
@@ -85,5 +86,42 @@ class LandingPageController extends Controller
         // dd($profil2015);
 
         return view('frontend.profil_lulusan', compact('data_lab', 'data_kelompok', 'profil2015', 'profil2020'));
+    }
+
+    public function mataKuliah()
+    {
+        $data_kelompok = KelompokKeahlian::orderBy('nama_kelompok', 'ASC')->get();
+        $data_lab = Lab::get();
+        $matkul1 = Matkul::where('semester', '=', 'Semester 1')->get();
+        $matkul2 = Matkul::where('semester', '=', 'Semester 2')->get();
+        $matkul3 = Matkul::where('semester', '=', 'Semester 3')->get();
+        $matkul4 = Matkul::where('semester', '=', 'Semester 4')->get();
+        $matkul5 = Matkul::where('semester', '=', 'Semester 5')->get();
+        $matkul6 = Matkul::where('semester', '=', 'Semester 6')->get();
+        $matkul7 = Matkul::where('semester', '=', 'Semester 7')->get();
+        $matkul8 = Matkul::where('semester', '=', 'Semester 8')->get();
+
+        return view('frontend.matkul', compact('data_kelompok', 'data_lab', 'matkul1', 'matkul2', 'matkul3', 'matkul4', 'matkul5', 'matkul6', 'matkul7', 'matkul8'));
+    }
+
+    public function kelompokKeahlian($id)
+    {
+        $data_kelompok = KelompokKeahlian::orderBy('nama_kelompok', 'ASC')->get();
+        $data_lab = Lab::get();
+        $data = KelompokKeahlian::find($id);
+        $dosenAhli = DetailUserDosen::select(
+            'detail_user_dosen.id',
+            'detail_user_dosen.link',
+            'users.name',
+            'users.profile_photo_path'
+        )->leftJoin('kelompok_keahlian', 'kelompok_keahlian.id', 'detail_user_dosen.kelompok_keahlian_id')
+         ->leftJoin('users', 'users.id', 'detail_user_dosen.user_id')
+         ->where('kelompok_keahlian_id', $id)
+         ->orderBy('no_urut')
+         ->get();
+
+        //  dd($dosenAhli);
+
+         return view('frontend.kelompok_keahlian', compact('data_kelompok', 'data_lab', 'data', 'dosenAhli'));
     }
 }

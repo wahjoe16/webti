@@ -415,6 +415,12 @@ body {
     text-decoration: none;
 }
 
+/* === MATA KULIAH PAGE === */
+.list-smt h5 {
+    border-left: 3px solid darkgoldenrod;
+    padding-left: 18px;
+}
+
 /* === MOBILE RESPONSIVE === */
 @media (min-width: 360px) {
     .welcome-image-1 {

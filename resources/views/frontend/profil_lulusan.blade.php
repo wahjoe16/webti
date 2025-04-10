@@ -12,7 +12,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">{{ $p2015->title }}</h5>
-                            <p class="card-text">{{ $p2015->description }}</p>
+                            <p class="card-text text-muted">{{ $p2015->description }}</p>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">{{ $p2020->title }}</h5>
-                            <p class="card-text">{{ $p2020->description }}</p>
+                            <p class="card-text text-muted">{{ $p2020->description }}</p>
                         </div>
                     </div>
                 </div>

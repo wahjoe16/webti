@@ -28,6 +28,8 @@ Route::get('/about', [LandingPageController::class, 'about'])->name('landing.abo
 Route::get('/visi-misi', [LandingPageController::class, 'visiMisi'])->name('landing.visiMisi');
 Route::get('/dosen', [LandingPageController::class, 'dosen'])->name('landing.dosen');
 Route::get('/profil-lulusan', [LandingPageController::class, 'profilLulusan'])->name('landing.profilLulusan');
+Route::get('/mata-kuliah', [LandingPageController::class, 'mataKuliah'])->name('landing.mataKuliah');
+Route::get('/kelompok-keahlian/{id}', [LandingPageController::class, 'kelompokKeahlian'])->name('landing.kelompokKeahlian');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified', ])->group(function () {
     Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');

@@ -36,7 +36,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('landing.profilLulusan') }}">Profil Lulusan</a></li>
-                        <li><a class="dropdown-item" href="#">Daftar Mata Kuliah</a></li>
+                        <li><a class="dropdown-item" href="{{ route('landing.mataKuliah') }}">Mata Kuliah</a></li>
                     </ul>
                 </li>
                 <li class="nav-item px-3 px-lg-0 py-1 py-lg-4 dropdown">
@@ -45,7 +45,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         @foreach ($data_kelompok as $dk)
-                            <li><a class="dropdown-item" href="#">{{ $dk->nama_kelompok }}</a></li>
+                            <li><a class="dropdown-item" href="{{ route('landing.kelompokKeahlian', $dk->id) }}">{{ $dk->nama_kelompok }}</a></li>
                         @endforeach
                     </ul>
                 </li>
