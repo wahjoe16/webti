@@ -124,4 +124,14 @@ class LandingPageController extends Controller
 
          return view('frontend.kelompok_keahlian', compact('data_kelompok', 'data_lab', 'data', 'dosenAhli'));
     }
+
+    public function laboratorium($id)
+    {
+        $data_kelompok = KelompokKeahlian::orderBy('nama_kelompok', 'ASC')->get();
+        $data_lab = Lab::get();
+        $data = Lab::find($id);
+        // dd($data);
+
+        return view('frontend.laboratorium', compact('data_kelompok', 'data_lab', 'data'));
+    }
 }

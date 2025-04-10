@@ -23,7 +23,7 @@ class LabController extends Controller
     public function create()
     {
         $pageTitle = "Add New Laboratory";
-        $kasie = User::get();
+        $kasie = User::where('type', '=', 'dosen')->orderBy('nik', 'DESC')->get();
         return view('backend.lab.create', compact('pageTitle', 'kasie'));
     }
 

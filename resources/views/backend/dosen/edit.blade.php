@@ -40,7 +40,7 @@
                     </div>
                     <div class="form-group">
                         <label for="no_urut"><strong>Nomor Urut:</strong></label>
-                        <input type="number" class="form-control @error('no_urut') is-invalid @enderror" id="no_urut" name="no_urut" placeholder="Nomor Urut">
+                        <input type="number" class="form-control @error('no_urut') is-invalid @enderror" id="no_urut" name="no_urut" value="{{ $data->detail_dosen->no_urut }}" placeholder="Nomor Urut">
                         @error('no_urut')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror

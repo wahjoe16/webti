@@ -55,7 +55,7 @@ class DosenController extends Controller
         $request->validate([
             'name' => 'required',
             'nik' => 'required',
-            'email' => 'required|email|unique:users',
+            'email' => 'required|email',
             'kelompok_keahlian_id' =>'required',
             'fungsional' => 'required',
             'link' => 'required',
@@ -112,7 +112,7 @@ class DosenController extends Controller
         $request->validate([
             'name' => 'required',
             'nik' => 'required',
-            'email' => 'required|email|unique:users',
+            'email' => 'required|email',
             'kelompok_keahlian_id' =>'required',
             'fungsional' => 'required',
             'link' => 'required',

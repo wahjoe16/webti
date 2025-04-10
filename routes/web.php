@@ -30,6 +30,7 @@ Route::get('/dosen', [LandingPageController::class, 'dosen'])->name('landing.dos
 Route::get('/profil-lulusan', [LandingPageController::class, 'profilLulusan'])->name('landing.profilLulusan');
 Route::get('/mata-kuliah', [LandingPageController::class, 'mataKuliah'])->name('landing.mataKuliah');
 Route::get('/kelompok-keahlian/{id}', [LandingPageController::class, 'kelompokKeahlian'])->name('landing.kelompokKeahlian');
+Route::get('/laboratorium/{id}', [LandingPageController::class, 'laboratorium'])->name('landing.laboratorium');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified', ])->group(function () {
     Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');

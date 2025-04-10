@@ -48,6 +48,21 @@ body {
     animation: infinite;
 }
 
+.btn-admission {
+    background-color: darkgoldenrod;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 50px;
+}
+
+.btn-admission:hover {
+    background-color: rgb(196, 159, 66);
+    color: #fff;
+    transition: all 0.3 ease-in-out;
+}
+
 /* === BANNER === */
 #welcome {
     margin-top: 80px;
@@ -189,7 +204,7 @@ body {
 }
 
 .nav-btn:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(19, 27, 109);
 }
 .nav-btn::after,
 .nav-btn::before {
@@ -419,6 +434,21 @@ body {
 .list-smt h5 {
     border-left: 3px solid darkgoldenrod;
     padding-left: 18px;
+}
+
+/* === LABORATORIUM PAGE === */
+.row-gallery-lab {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.column {
+    grid-column: span 3;
+    width: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
 }
 
 /* === MOBILE RESPONSIVE === */
