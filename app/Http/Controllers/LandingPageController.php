@@ -2,21 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Lab;
+use App\Models\Post;
+use App\Models\User;
 use App\Models\Banner;
-use App\Models\DetailUserDosen;
+use App\Models\Matkul;
 use App\Models\Feature;
-use App\Models\Greeting;
 use App\Models\History;
 use App\Models\Kaprodi;
-use App\Models\KelompokKeahlian;
-use App\Models\Lab;
-use App\Models\Matkul;
-use App\Models\Post;
-use App\Models\ProfilLulusan;
-use App\Models\Testimonial;
-use App\Models\User;
+use App\Models\Greeting;
 use App\Models\VisiMisi;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use App\Models\ProfilLulusan;
+use App\Models\DetailUserDosen;
+use App\Models\KelompokKeahlian;
+use Artesaos\SEOTools\Facades\JsonLd;
+use Artesaos\SEOTools\Facades\SEOMeta;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\TwitterCard;
 
 class LandingPageController extends Controller
 {
@@ -31,6 +35,15 @@ class LandingPageController extends Controller
         $data_lab = Lab::get();
         // dd($data_testi);
 
+        SEOMeta::setTitle('Teknik Industri Unisba');
+        OpenGraph::setTitle('Teknik Industri Unisba');
+        TwitterCard::setTitle('Teknik Industri Unisba');
+        JsonLd::setTitle('Teknik Industri Unisba');
+
+        SEOMeta::setDescription(strip_tags('Kuliah Berkualitas di Teknik Industri Unisba'));
+        OpenGraph::setDescription(strip_tags('Kuliah Berkualitas di Teknik Industri Unisba'));
+        JsonLd::setDescription(strip_tags('Kuliah Berkualitas di Teknik Industri Unisba'));
+
         return view('frontend.index', compact(
             'data_banner', 'data_kelompok', 'data_lab',
             'data_testi', 'data_greeting', 'data_feature',
@@ -44,6 +57,15 @@ class LandingPageController extends Controller
         $data_kelompok = KelompokKeahlian::orderBy('nama_kelompok', 'ASC')->get();
         $data_lab = Lab::get();
         $data_kaprodi = Kaprodi::get();
+
+        SEOMeta::setTitle('Teknik Industri Unisba');
+        OpenGraph::setTitle('Teknik Industri Unisba');
+        TwitterCard::setTitle('Teknik Industri Unisba');
+        JsonLd::setTitle('Teknik Industri Unisba');
+
+        SEOMeta::setDescription(strip_tags('Kuliah Berkualitas di Teknik Industri Unisba'));
+        OpenGraph::setDescription(strip_tags('Kuliah Berkualitas di Teknik Industri Unisba'));
+        JsonLd::setDescription(strip_tags('Kuliah Berkualitas di Teknik Industri Unisba'));
         return view('frontend.about', compact('data_about', 'data_lab', 'data_kelompok', 'data_kaprodi'));
     }
 

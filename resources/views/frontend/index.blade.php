@@ -122,7 +122,7 @@
         <div class="row">
             @foreach ($data_feature as $df)
                 <div class="col-lg-6">
-                    <div class="card mb-4">
+                    <div class="card shadow mb-4">
                         <div class="row g-0">
                             <div class="col-md-4">
                                 <img src="{{ url('/media/feature/', $df->image) }}" class="img-fluid rounded-start" alt="...">
@@ -157,7 +157,7 @@
                             <a href="" class="btn btn-danger btn-sm mt-3">Detail</a>
                         </div>
                         <div class="card-footer">
-                            <small class="text-body-secondary">{{ $dp->created_at->diffForHumans() }}</small>
+                            <small class="text-body-secondary">{{ $dp->post_date }}</small>
                         </div>
                     </div>
                 @endforeach

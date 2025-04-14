@@ -72,6 +72,13 @@
                         @enderror
                     </div>
                     <div class="form-group mb-5">
+                        <label for="post_date"><strong>Post Date:</strong></label>
+                        <input type="text" name="post_date" id="post_date" class="form-control @error('post_date') is-invalid @enderror">
+                        @error('post_date')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group mb-5">
                         <label for="featured_image"><strong>Featured Image:</strong></label>
                         <input type="file" class="form-control-file @error('featured_image') is-invalid @enderror" id="featured_image" name="featured_image" onchange="readUrl(this);">
                         @error('featured_image')
@@ -132,6 +139,10 @@
 
 <script>
     CKEDITOR.replace('#content');
+</script>
+
+<script>
+    $('#post_date').datepicker();
 </script>
 
 <script>

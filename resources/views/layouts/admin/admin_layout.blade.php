@@ -21,6 +21,9 @@
     <!-- dropify file input -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css">
 
+    {{-- Datepicker --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css">
+
     <!-- Custom fonts for this template-->
     <link href="{{ url('/admin_dashboard/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -92,6 +95,9 @@
 
     {{-- Datatable --}}
     <script src="{{ url('/admin_dashboard/datatable/datatables.min.js') }}"></script>
+
+    {{-- Datepicker --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"></script>
 
     <script src="{{ url('/admin_dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 

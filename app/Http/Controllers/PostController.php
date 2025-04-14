@@ -67,6 +67,7 @@ class PostController extends Controller
             'featured_image' =>'required|image|mimes:jpg,jpeg,png',
             'status' =>'required|in:publish,draft',
             'visibility' =>'required',
+            'post_date' => 'required'
         ]);
 
         // if ($validator->fails()) {
@@ -79,6 +80,9 @@ class PostController extends Controller
         $path = public_path('media/posts');
         $file->move($path, $imageName);
 
+        // define post date
+        $date = $request->post_date;
+
         // Create a new post in the database
         Post::create([
             'title' => $request->title,
@@ -87,6 +91,7 @@ class PostController extends Controller
             'featured_image' => $imageName,
             // 'featured_image' => isset($imageName) ? $imageName : $post->featured_image,
             'slug' => $this->generateSlug($request->title),
+            'post_date' => date('Y-m-d', strtotime($date)),
             'status' => $request->status,
             'visibility' => $request->visibility,
             'user_id' => auth()->user()->id,
@@ -139,6 +144,7 @@ class PostController extends Controller
             'featured_image' =>'required|image|mimes:jpg,jpeg,png',
             'status' =>'required|in:publish,draft',
             'visibility' =>'required',
+            'post_date' => 'required'
         ]);
 
         // Upload the image to the storage directory
@@ -152,6 +158,9 @@ class PostController extends Controller
             }
         }
 
+        // define post date
+        $date = $request->post_date;
+
         // Update the post in the database
         $post->update([
             'title' => $request->title,
@@ -159,6 +168,7 @@ class PostController extends Controller
             'category_id' => $request->category_id,
             'featured_image' => isset($imageName)? $imageName : $post->featured_image,
             'slug' => $this->generateSlug($request->title, $id),
+            'post_date' => date('Y-m-d', strtotime($date)),
             'status' => $request->status,
             'visibility' => $request->visibility,
             'user_id' => auth()->user()->id,
