@@ -72,7 +72,7 @@
                     </ul>
                 </li>
                 <li class="nav-item px-3 px-lg-0 py-2 py-lg-4" style="margin-left: 90px;">
-                    <a href="https://admission.unisba.ac.id/" class="btn btn-admission">Admission <i class='bx bx-chevrons-right'></i></a>
+                    <a href="https://admission.unisba.ac.id/" class="btn btn-lg btn-admission">Admission <i class='bx bx-chevrons-right'></i></a>
                 </li>
             </ul>
             

@@ -11,6 +11,8 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <title>{{ getenv('APP_NAME') }}</title>
+
         <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon">
 
         <!-- Bootstrap CSS -->
@@ -29,7 +31,7 @@
         {{-- BOXICONS --}}
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-        <title>Teknik Industri | UNIVERSITAS ISLAM BANDUNG</title>
+        
     </head>
     <body>
         

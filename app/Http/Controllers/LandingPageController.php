@@ -35,10 +35,10 @@ class LandingPageController extends Controller
         $data_lab = Lab::get();
         // dd($data_testi);
 
-        SEOMeta::setTitle('Teknik Industri Unisba');
-        OpenGraph::setTitle('Teknik Industri Unisba');
-        TwitterCard::setTitle('Teknik Industri Unisba');
-        JsonLd::setTitle('Teknik Industri Unisba');
+        SEOMeta::setTitle('Teknik Industri | UNIVERSITAS ISLAM BANDUNG');
+        OpenGraph::setTitle('Teknik Industri | UNIVERSITAS ISLAM BANDUNG');
+        TwitterCard::setTitle('Teknik Industri | UNIVERSITAS ISLAM BANDUNG');
+        JsonLd::setTitle('Teknik Industri | UNIVERSITAS ISLAM BANDUNG');
 
         SEOMeta::setDescription(strip_tags('Kuliah Berkualitas di Teknik Industri Unisba'));
         OpenGraph::setDescription(strip_tags('Kuliah Berkualitas di Teknik Industri Unisba'));
@@ -51,6 +51,40 @@ class LandingPageController extends Controller
         ));
     }
 
+    public function postList()
+    {
+        SEOMeta::setTitle('Berita Teknik Industri Unisba');
+        OpenGraph::setTitle('Berita Teknik Industri Unisba');
+        TwitterCard::setTitle('Berita Teknik Industri Unisba');
+        JsonLd::setTitle('Berita Teknik Industri Unisba');
+
+        $data_kelompok = KelompokKeahlian::orderBy('nama_kelompok', 'ASC')->get();
+        $data_lab = Lab::get();
+        $data_post = Post::with('user')->latest()->paginate(10);
+        // dd($data_post);
+
+        return view('frontend.all_post', compact('data_post', 'data_lab', 'data_kelompok'));
+    }
+
+    public function showPost($slug)
+    {
+        $data_kelompok = KelompokKeahlian::orderBy('nama_kelompok', 'ASC')->get();
+        $data_lab = Lab::get();
+        $post = Post::where('slug', $slug)->first();
+        // dd($post);
+
+        SEOMeta::setTitle($post->title);
+        SEOMeta::setDescription($post->meta_description);
+        SEOMeta::addKeyword($post->meta_keywords);
+
+        OpenGraph::setDescription($post->meta_description);
+        OpenGraph::setTitle($post->title);
+
+        JsonLd::setTitle($post->title);
+        JsonLd::setDescription($post->meta_description);
+
+        return view('frontend.detail_post', compact('post', 'data_lab', 'data_kelompok'));
+    }
     public function about()
     {
         $data_about = History::first();

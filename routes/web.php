@@ -3,6 +3,7 @@
 use App\Http\Controllers\AkreditasiController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\GreetingController;
@@ -24,6 +25,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [LandingPageController::class, 'index'])->name('landing.index');
+Route::get('/all-posts', [LandingPageController::class, 'postList'])->name('landing.listPost');
+Route::get('/post/{slug}', [LandingPageController::class, 'showPost'])->name('landing.showPost');
 Route::get('/about', [LandingPageController::class, 'about'])->name('landing.about');
 Route::get('/visi-misi', [LandingPageController::class, 'visiMisi'])->name('landing.visiMisi');
 Route::get('/dosen', [LandingPageController::class, 'dosen'])->name('landing.dosen');
@@ -33,7 +36,7 @@ Route::get('/kelompok-keahlian/{id}', [LandingPageController::class, 'kelompokKe
 Route::get('/laboratorium/{id}', [LandingPageController::class, 'laboratorium'])->name('landing.laboratorium');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified', ])->group(function () {
-    Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
+    Route::get('/dashboard', [DashboardAdminController::class, 'dashboard'])->name('dashboard');
     // Crud category post
     Route::group(['prefix' => '/administrator'], function(){
         Route::resource('/category', CategoryController::class);

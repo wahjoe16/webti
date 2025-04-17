@@ -18,7 +18,7 @@
                     <h1>Teknik Industri</h1>
                     <h3>Universitas Islam Bandung</h3>
                     <p>{{ $data_banner->caption }}</p>
-                    <a href="" class="btn">Selengkapnya <i class='bx bx-chevrons-down'></i></a>
+                    <a href="{{ route('landing.about') }}" class="btn">Selengkapnya <i class='bx bx-chevrons-down'></i></a>
                 </div>
             </div>
         </div>
@@ -153,17 +153,17 @@
                         <div class="card-body">
                             <h5 class="card-title mb-5">{{ $dp->title }}</h5>
                             <i class='bx bxs-purchase-tag'></i>&nbsp;&nbsp;<span class="post-cat">{{ $dp->categories->name }}</span><br>
-                            <i class='bx bxs-user-pin'></i>&nbsp;&nbsp;<span class="post-name">{{ $dp->user->name }}</span><br>
-                            <a href="" class="btn btn-danger btn-sm mt-3">Detail</a>
+                            <i class='bx bxs-user-pin'></i>&nbsp;&nbsp;Post by <span class="post-name">{{ $dp->user->name }}</span><br>
+                            <a href="{{ route('landing.showPost', ['slug' => $dp->slug]) }}" target="_blank" class="btn btn-danger btn-sm mt-3">Detail</a>
                         </div>
                         <div class="card-footer">
-                            <small class="text-body-secondary">{{ $dp->post_date }}</small>
+                            <small class="text-body-secondary">{{ tanggal_indonesia($dp->post_date, false) }}</small>
                         </div>
                     </div>
                 @endforeach
             </div>
             <div class="text-center mt-3">
-                <a href="" class="btn btn-more-posts">Selengkapnya <i class='bx bx-chevrons-right'></i></a>
+                <a href="{{ route('landing.listPost') }}" class="btn btn-more-posts">Selengkapnya <i class='bx bx-chevrons-right'></i></a>
             </div>
         </div>
     </div>

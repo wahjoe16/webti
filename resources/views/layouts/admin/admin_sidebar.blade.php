@@ -3,9 +3,9 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('dashboard') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    {{-- <i class="fas fa-laugh-wink"></i> --}}
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3"><strong>Teknik Industri</strong> UNISBA</div>
             </a>
 
             <!-- Divider -->
@@ -28,7 +28,7 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('category.index') }}">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="bx bxs-category text-gray-300"></i>
                     <span>Categories</span>
                 </a>
             </li>
@@ -37,7 +37,7 @@
             <li class="nav-item {{ Route::is('post.index') || Route::is('post.create') ? 'active' : '' }}">
                 <a class="nav-link collapsed" href="javascript:;" data-toggle="collapse" data-target="#collapsePosts"
                     aria-expanded="true" aria-controls="collapsePosts">
-                    <i class="fas fa-fw fa-wrench"></i>
+                    <i class="bx bx-news text-gray-300"></i>
                     <span>Posts</span>
                 </a>
                 <div id="collapsePosts" class="collapse" aria-labelledby="headingUtilities"
@@ -60,7 +60,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#landingPage"
                     aria-expanded="true" aria-controls="landingPage">
-                    <i class="fas fa-fw fa-folder"></i>
+                    <i class="fas fa-fw fa-folder text-gray-300"></i>
                     <span>Landing Page</span>
                 </a>
                 <div id="landingPage" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -77,7 +77,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
+                    <i class="fas fa-fw fa-folder text-gray-300"></i>
                     <span>Pages</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -97,14 +97,14 @@
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('dosen.index') }}">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Data Lectures</span>
+                    <i class="bx bxs-graduation text-gray-300"></i>
+                    <span>Data Dosen</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('matkul.index') }}">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="bx bxs-book text-gray-300"></i>
                     <span>Data Mata Kuliah</span>
                 </a>
             </li>
@@ -112,22 +112,22 @@
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('labs.index') }}">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="bx bx-desktop text-gray-300"></i>
                     <span>Data Lab</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('kelompok-keahlian.index') }}">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class='bx bxs-book-content text-gray-300'></i>
                     <span>Data Kelompok Keahlian</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('kaprodi.index') }}">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Data Kaprodi</span>
+                    <i class="bx bxs-graduation text-gray-300"></i>
+                    <span>Data Ketua Program Studi</span>
                 </a>
             </li>
 
