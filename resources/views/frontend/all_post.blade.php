@@ -11,7 +11,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 py-3">
                 @foreach ($data_post as $dp)
                     <div class="col">
-                        <div class="card shadow mb-4">
+                        <div class="card shadow mb-4" data-aos="fade-up" data-aos-duration="2000">
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <img src="{{ url('/media/posts/', $dp->featured_image) }}" class="img-fluid rounded-start" alt="...">

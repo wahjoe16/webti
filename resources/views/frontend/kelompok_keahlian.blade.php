@@ -6,11 +6,11 @@
     <div class="container px-5 py-3">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 about-header">
-                <h6>KELOMPOK KEAHLIAN</h6>
-                <h1>{{ $data->nama_kelompok }}</h1>
-                <p class="text-muted">{{ $data->description }}</p>
+                <h6  data-aos="fade-left" data-aos-duration="2000">KELOMPOK KEAHLIAN</h6>
+                <h1  data-aos="fade-left" data-aos-duration="2000">{{ $data->nama_kelompok }}</h1>
+                <p class="text-muted"  data-aos="fade-left" data-aos-duration="2000">{{ $data->description }}</p>
                 <hr>
-                <div class="row row-cols-1 row-cols-md-3 g-4 my-4">
+                <div class="row row-cols-1 row-cols-md-3 g-4 my-4"  data-aos="fade-up" data-aos-duration="2000">
                     @foreach ($dosenAhli as $da)
                         <div class="col">
                             <div class="card shadow h-100 list-dosen">

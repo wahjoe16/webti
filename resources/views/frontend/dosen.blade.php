@@ -12,7 +12,7 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4 my-4">
                     @foreach ($data_dosen as $dd)
                         <div class="col">
-                            <div class="card shadow h-100 list-dosen">
+                            <div class="card shadow h-100 list-dosen" data-aos="fade-up" data-aos-duration="2000">
                                 <img src="{{ url('/media/dosen/', $dd->profile_photo_path) }}" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <h5 class="card-title mt-4">{{ $dd->name }}</h5>

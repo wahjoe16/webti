@@ -14,7 +14,7 @@
         <div class="row py-3">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="row row-cols-1 row-cols-md-4 g-4">
-                    <div class="col list-smt">
+                    <div class="col list-smt" data-aos="fade-left" data-aos-duration="2000">
                         <h5>Semester 1</h5>
                         <ul class="list-group list-group-flush">
                             @foreach ($matkul1 as $m1)
@@ -22,7 +22,7 @@
                             @endforeach
                         </ul>
                     </div>
-                    <div class="col list-smt">
+                    <div class="col list-smt" data-aos="fade-left" data-aos-duration="2000">
                         <h5>Semester 2</h5>
                         <ul class="list-group list-group-flush">
                             @foreach ($matkul2 as $m2)
@@ -30,7 +30,7 @@
                             @endforeach
                         </ul>
                     </div>
-                    <div class="col list-smt">
+                    <div class="col list-smt" data-aos="fade-left" data-aos-duration="2000">
                         <h5>Semester 3</h5>
                         <ul class="list-group list-group-flush">
                             @foreach ($matkul3 as $m3)
@@ -38,7 +38,7 @@
                             @endforeach
                         </ul>
                     </div>
-                    <div class="col list-smt">
+                    <div class="col list-smt" data-aos="fade-left" data-aos-duration="2000">
                         <h5>Semester 4</h5>
                         <ul class="list-group list-group-flush">
                             @foreach ($matkul4 as $m4)
@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="row row-cols-1 row-cols-md-4 g-4 mt-3">
-                    <div class="col list-smt">
+                    <div class="col list-smt" data-aos="fade-left" data-aos-duration="2000">
                         <h5>Semester 5</h5>
                         <ul class="list-group list-group-flush">
                             @foreach ($matkul5 as $m5)
@@ -56,7 +56,7 @@
                             @endforeach
                         </ul>
                     </div>
-                    <div class="col list-smt">
+                    <div class="col list-smt" data-aos="fade-left" data-aos-duration="2000">
                         <h5>Semester 6</h5>
                         <ul class="list-group list-group-flush">
                             @foreach ($matkul6 as $m6)
@@ -64,7 +64,7 @@
                             @endforeach
                         </ul>
                     </div>
-                    <div class="col list-smt">
+                    <div class="col list-smt" data-aos="fade-left" data-aos-duration="2000">
                         <h5>Semester 7</h5>
                         <ul class="list-group list-group-flush">
                             @foreach ($matkul7 as $m7)
@@ -72,7 +72,7 @@
                             @endforeach
                         </ul>
                     </div>
-                    <div class="col list-smt">
+                    <div class="col list-smt" data-aos="fade-left" data-aos-duration="2000">
                         <h5>Semester 8</h5>
                         <ul class="list-group list-group-flush">
                             @foreach ($matkul8 as $m8)
