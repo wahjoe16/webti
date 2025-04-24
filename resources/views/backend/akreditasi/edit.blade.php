@@ -35,7 +35,8 @@
                 <div class="card-body">
                     <div class="form-group mb-5">
                         <label for="file"><strong>File:</strong></label>
-                        <input type="file" class="dropify @error('file') is-invalid @enderror" id="file" name="file">
+                        <input type="file" class="dropify @error('file') is-invalid @enderror" id="file" name="file" data-default-file="{{ url('/media/akreditasi/', $data->file) }}">
+                        <input type="hidden" name="current_file" value="{{ $data->file }}">
                         @error('file')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror

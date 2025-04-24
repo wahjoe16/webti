@@ -36,11 +36,11 @@ class LabController extends Controller
             'location' =>'required',
             'description' =>'required',
             
-            'image_1' =>'required|image|mimes:jpeg,jpg,png',
-            'image_2' => 'image|mimes:jpeg,jpg,png',
-            'image_3' => 'image|mimes:jpeg,jpg,png',
-            'image_4' => 'image|mimes:jpeg,jpg,png',
-            'image_5' => 'image|mimes:jpeg,jpg,png',
+            'image_1' =>'required|image',
+            'image_2' => 'image',
+            'image_3' => 'image',
+            'image_4' => 'image',
+            'image_5' => 'image',
         ]);
 
 
@@ -109,11 +109,11 @@ class LabController extends Controller
             'user_id' =>'required',
             'location' =>'required',
             'description' =>'required',
-            'image_1' => 'required|image|mimes:jpeg,jpg,png',
-            'image_2' => 'image|mimes:jpeg,jpg,png',
-            'image_3' => 'image|mimes:jpeg,jpg,png',
-            'image_4' => 'image|mimes:jpeg,jpg,png',
-            'image_5' => 'image|mimes:jpeg,jpg,png',
+            'image_1' => 'image',
+            'image_2' => 'image',
+            'image_3' => 'image',
+            'image_4' => 'image',
+            'image_5' => 'image',
         ]);
 
         $lab = Lab::find($id);
@@ -174,11 +174,11 @@ class LabController extends Controller
             'user_id' => $request->user_id,
             'location' => $request->location,
             'description' => $request->description,
-            'image_1' => $file_name_1 ?? $lab->image_1,
-            'image_2' => $file_name_2 ?? null,
-            'image_3' => $file_name_3 ?? null,
-            'image_4' => $file_name_4 ?? null,
-            'image_5' => $file_name_5 ?? null,
+            'image_1' => $file_name_1 ?? $request->current_image_1,
+            'image_2' => $file_name_2 ?? $request->current_image_2,
+            'image_3' => $file_name_3 ?? $request->current_image_3,
+            'image_4' => $file_name_4 ?? $request->current_image_4,
+            'image_5' => $file_name_5 ?? $request->current_image_5,
         ]);
 
         // Redirect to the post index page

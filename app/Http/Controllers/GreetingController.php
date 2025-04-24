@@ -78,7 +78,7 @@ class GreetingController extends Controller
             'name' => $request->name,
             'message' => $request->message,
             'link' => $request->link,
-            'photo' => $imageName?? $greeting->photo
+            'photo' => $imageName?? $request->current_photo
         ]);
 
         Alert::success('Sambutan kaprodi successfully updated!');

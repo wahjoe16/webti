@@ -78,9 +78,9 @@ class VisiMisiController extends Controller
         // Validate the incoming request
         $request->validate([
             'content' =>'required',
-            'image_1' =>'required|image',
-            'image_2' => 'image',
-            'image_3' => 'image'
+            'image_1' =>'image',
+            'image_2' =>'image',
+            'image_3' =>'image'
         ]);
 
         $data = VisiMisi::find($id);
@@ -118,9 +118,9 @@ class VisiMisiController extends Controller
         // Update the post in the database
         $data->update([
             'content' => $request->content,
-            'image_1' => $file_name_1 ?? $data->image_1,
-            'image_2' => $file_name_2 ?? null,
-            'image_3' => $file_name_3 ?? null
+            'image_1' => $file_name_1 ?? $request->current_image_1,
+            'image_2' => $file_name_2 ?? $request->current_image_2,
+            'image_3' => $file_name_3 ?? $request->current_image_3
         ]);
 
         // Redirect to the post index page

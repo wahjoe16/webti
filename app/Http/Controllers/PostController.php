@@ -141,7 +141,7 @@ class PostController extends Controller
             'title' =>'required|max:255',
             'content' =>'required',
             'category_id' =>'required|exists:categories,id',
-            'featured_image' =>'required|image|mimes:jpg,jpeg,png',
+            'featured_image' =>'image|mimes:jpg,jpeg,png',
             'status' =>'required|in:publish,draft',
             'visibility' =>'required',
             'post_date' => 'required'
@@ -160,13 +160,12 @@ class PostController extends Controller
 
         // define post date
         $date = $request->post_date;
-
         // Update the post in the database
         $post->update([
             'title' => $request->title,
             'content' => $request->content,
             'category_id' => $request->category_id,
-            'featured_image' => isset($imageName)? $imageName : $post->featured_image,
+            'featured_image' => $imageName ?? $request->current_featured_image,
             'slug' => $this->generateSlug($request->title, $id),
             'post_date' => date('Y-m-d', strtotime($date)),
             'status' => $request->status,

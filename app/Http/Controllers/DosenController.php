@@ -116,7 +116,7 @@ class DosenController extends Controller
             'kelompok_keahlian_id' =>'required',
             'fungsional' => 'required',
             'link' => 'required',
-            'profile_photo_path' => 'required|image',
+            'profile_photo_path' => 'image',
             'pendidikan' => 'required',
             'no_urut' => 'required'
         ]);
@@ -138,7 +138,7 @@ class DosenController extends Controller
         $data->nik = $request->nik;
         $data->type = "dosen";
         $data->password = bcrypt($data->nik);
-        $data->profile_photo_path = $photoName;
+        $data->profile_photo_path = $photoName ?? $request->current_photo;
         $data->save();
 
         $detail_dosen->user_id = $data->id;

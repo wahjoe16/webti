@@ -108,7 +108,8 @@
                     
                     <div class="form-group mb-5">
                         <label for="profile_photo_path"><strong>Photo:</strong></label>
-                        <input type="file" class="dropify @error('profile_photo_path') is-invalid @enderror" id="profile_photo_path" name="profile_photo_path" onchange="readUrl(this);">
+                        <input type="file" class="dropify @error('profile_photo_path') is-invalid @enderror" id="profile_photo_path" name="profile_photo_path" data-default-file="{{ url('/media/dosen/', $data->profile_photo_path) }}">
+                        <input type="hidden" name="current_photo" value="{{ $data->profile_photo_path }}">
                         @error('profile_photo_path')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror

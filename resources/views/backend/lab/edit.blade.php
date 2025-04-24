@@ -45,27 +45,32 @@
                     <h6 class="m-0 font-weight-bold text-primary">Lab Images</h6>
                 </div>
                 <div class="card-body">
-                    <div class="form-group">
+                    <div class="form-group mb-5">
                         <label for="image_1"><strong>Primary Image:</strong></label>
-                        <input type="file" class="dropify @error('image_1') is-invalid @enderror" id="image_1" name="image_1">
+                        <input type="file" class="dropify @error('image_1') is-invalid @enderror" id="image_1" name="image_1" data-default-file="{{ url('media/labs', $lab->image_1) }}">
                         @error('image_1')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror
+                        <input type="hidden" name="current_image_1" id="current_image_1" value="{{ $lab->image_1 }}">
                     </div>
                     <div class="form-group">
                         <label for="meta_desc"><strong>Other Image:</strong></label>
                         <div class="row">
                             <div class="col-lg-3">
-                                <input type="file" class="dropify id="image_2" name="image_2">
+                                <input type="file" class="dropify" id="image_2" name="image_2" data-default-file="{{ url('media/labs', $lab->image_2) }}">
+                                <input type="hidden" name="current_image_2" id="current_image_2" value="{{ $lab->image_2 }}">
                             </div>
                             <div class="col-lg-3">
-                                <input type="file" class="dropify id="image_3" name="image_3">
+                                <input type="file" class="dropify" id="image_3" name="image_3" data-default-file="{{ url('media/labs', $lab->image_3) }}">
+                                <input type="hidden" name="current_image_3" id="current_image_3" value="{{ $lab->image_3 }}">
                             </div>
                             <div class="col-lg-3">
-                                <input type="file" class="dropify id="image_4" name="image_4">
+                                <input type="file" class="dropify" id="image_4" name="image_4" data-default-file="{{ url('media/labs', $lab->image_4) }}">
+                                <input type="hidden" name="current_image_4" id="current_image_4" value="{{ $lab->image_4 }}">
                             </div>
                             <div class="col-lg-3">
-                                <input type="file" class="dropify id="image_5" name="image_5">
+                                <input type="file" class="dropify" id="image_5" name="image_5" data-default-file="{{ url('media/labs', $lab->image_5) }}">
+                                <input type="hidden" name="current_image_5" id="current_image_5" value="{{ $lab->image_5 }}">
                             </div>
                         </div>
                         
@@ -112,9 +117,7 @@
         $('.dropify').dropify();
 
         CKEDITOR.replace('#description');
-    })
-
-    
+    })  
 </script>
 
 @endpush

@@ -54,7 +54,7 @@ class AkreditasiController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'file' => 'required|mimes:pdf'
+            'file' => 'mimes:pdf'
         ]);
 
         $data = Akreditasi::find($id);
@@ -68,7 +68,7 @@ class AkreditasiController extends Controller
 
         $data->update([
             'content' => $request->content,
-            'file' => $fileName
+            'file' => $fileName ?? $request->current_file
         ]);
 
         Alert::success('File akreditasi successfully updated!');

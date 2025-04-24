@@ -80,13 +80,10 @@
                     </div>
                     <div class="form-group mb-5">
                         <label for="featured_image"><strong>Featured Image:</strong></label>
-                        <input type="file" class="form-control-file @error('featured_image') is-invalid @enderror" id="featured_image" name="featured_image" onchange="readUrl(this);">
+                        <input type="file" class="dropify @error('featured_image') is-invalid @enderror" id="featured_image" name="featured_image">
                         @error('featured_image')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror
-                    </div>
-                    <div class="d-block mb-3" style="max-width: 250px;">
-                        <img src="#" alt="" class="img-thumbnail" id="featured_image_preview">
                     </div>
 
                     {{-- <div class="form-group mb-5">
@@ -146,25 +143,12 @@
 </script>
 
 <script>
-    
-    function readUrl(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function(e) {
-                $('#featured_image_preview').attr('src', e.target.result);
-            }
-
-            reader.readAsDataURL(input.files[0]); // convert to base64 string
-        }
-    }
-
-    $(function(){
-        $('#featured_image').on('change', function() {
-            readUrl(input);
-        })
+    $(function() {
+        $('.dropify').dropify();
     })
+</script>
 
+<script>
     /*
     // store POST to DB
     $('#publish').on('click', function(e){

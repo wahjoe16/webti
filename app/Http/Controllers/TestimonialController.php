@@ -84,7 +84,7 @@ class TestimonialController extends Controller
             'name' => $request->name,
             'jurusan_angkatan' => $request->jurusan_angkatan,
             'content' => $request->content,
-            'photo' => $imageName?? $testimonial->photo,
+            'photo' => $imageName?? $request->current_photo,
             'company' => $request->company,
             'position' => $request->position
         ]);

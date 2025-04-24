@@ -35,7 +35,8 @@
                 <div class="card-body">
                     <div class="form-group mb-5">
                         <label for="image"><strong>Image:</strong></label>
-                        <input type="file" class="dropify @error('image') is-invalid @enderror" id="image" name="image" onchange="readUrl(this);">
+                        <input type="file" class="dropify @error('image') is-invalid @enderror" id="image" name="image" data-default-file="{{ url('/media/struktur-organisasi/', $data->image) }}">
+                        <input type="hidden" name="current_image" value="{{ $data->image }}">
                         @error('image')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror

@@ -142,10 +142,10 @@ class BannerController extends Controller
         $banner->update([
             'caption' => $request->caption,
             'link' => $request->link,
-            'image_1' => $file_name_1 ?? $banner->image_1,
-            'image_2' => $file_name_2 ?? $banner->image_2,
-            'image_3' => $file_name_3 ?? $banner->image_3,
-            'image_4' => $file_name_4 ?? $banner->image_4,
+            'image_1' => $file_name_1 ?? $request->current_image_1,
+            'image_2' => $file_name_2 ?? $request->current_image_2,
+            'image_3' => $file_name_3 ?? $request->current_image_3,
+            'image_4' => $file_name_4 ?? $request->current_image_4,
         ]);
 
         // Redirect to the post index page

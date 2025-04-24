@@ -42,21 +42,24 @@
                 <div class="card-body">
                     <div class="form-group mb-5">
                         <label for="image_1"><strong>Primary Image:</strong></label>
-                        <input type="file" class="dropify @error('image_1') is-invalid @enderror" id="image_1" name="image_1">
+                        <input type="file" class="dropify @error('image_1') is-invalid @enderror" id="image_1" name="image_1" data-default-file="{{ url('/media/histories/', $data->image_1) }}">
+                        <input type="hidden" name="current_image_1" value="{{ $data->image_1 }}">
                         @error('image_1')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group mb-5">
                         <label for="image_2"><strong>Other Image:</strong></label>
-                        <input type="file" class="dropify @error('image_2') is-invalid @enderror" id="image_2" name="image_2">
+                        <input type="file" class="dropify @error('image_2') is-invalid @enderror" id="image_2" name="image_2" data-default-file="{{ url('/media/histories/', $data->image_2) }}">
+                        <input type="hidden" name="current_image_2" value="{{ $data->image_2 }}">
                         @error('image_2')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group mb-5">
                         <label for="image_3"><strong>Other Image:</strong></label>
-                        <input type="file" class="dropify @error('image_3') is-invalid @enderror" id="image_3" name="image_3">
+                        <input type="file" class="dropify @error('image_3') is-invalid @enderror" id="image_3" name="image_3" data-default-file="{{ url('/media/histories/', $data->image_3) }}">
+                        <input type="hidden" name="current_image_3" value="{{ $data->image_3 }}">
                         @error('image_3')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror

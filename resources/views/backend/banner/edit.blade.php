@@ -39,10 +39,11 @@
                 </div>
                 <div class="card-body">
                     <div class="form-group">
-                        <input type="file" class="dropify @error('image_1') is-invalid @enderror" id="image_1" name="image_1">
+                        <input type="file" class="dropify @error('image_1') is-invalid @enderror" id="image_1" name="image_1" data-default-file="{{ url('media/banner', $data->image_1) }}">
                         @error('image_1')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror
+                        <input type="hidden" name="current_image_1" id="current_image_1" value="{{ $data->image_1 }}">
                     </div>
                 </div>
             </div>
@@ -54,13 +55,16 @@
                 </div>
                 <div class="card-body">
                     <div class="form-group mb-3">
-                        <input type="file" class="dropify" id="image_2" name="image_2">
+                        <input type="file" class="dropify" id="image_2" name="image_2" data-default-file="{{ url('media/banner', $data->image_2) }}">
+                        <input type="hidden" name="current_image_2" id="current_image_2" value="{{ $data->image_2 }}">
                     </div>
                     <div class="form-group mb-3">
-                        <input type="file" class="dropify" id="image_3" name="image_3">
+                        <input type="file" class="dropify" id="image_3" name="image_3" data-default-file="{{ url('media/banner', $data->image_3) }}">
+                        <input type="hidden" name="current_image_3" id="current_image_3" value="{{ $data->image_3 }}">
                     </div>
                     <div class="form-group mb-3">
-                        <input type="file" class="dropify" id="image_4" name="image_4">
+                        <input type="file" class="dropify" id="image_4" name="image_4" data-default-file="{{ url('media/banner', $data->image_4) }}">
+                        <input type="hidden" name="current_image_4" id="current_image_4" value="{{ $data->image_4 }}">
                     </div>
                 </div>
             </div>

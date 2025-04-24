@@ -56,7 +56,7 @@ class StrukturOrganisasiController extends Controller
     {
         $request->validate([
             'title' =>'required',
-            'image' => 'required|image'
+            'image' => 'image'
         ]);
 
         $data = StrukturOrganisasi::find($id);
@@ -70,7 +70,7 @@ class StrukturOrganisasiController extends Controller
 
         $data->update([
             'title' => $request->title,
-            'image' => $imageName
+            'image' => $imageName ?? $request->current_image
         ]);
 
         Alert::success('Struktur organisasi successfully updated!');

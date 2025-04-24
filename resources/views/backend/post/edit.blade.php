@@ -73,15 +73,22 @@
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror
                     </div>
+
                     <div class="form-group mb-5">
-                        <label for="featured_image"><strong>Featured Image:</strong></label>
-                        <input type="file" class="form-control-file @error('featured_image') is-invalid @enderror" id="featured_image" name="featured_image" onchange="readUrl(this);">
-                        @error('featured_image')
+                        <label for="post_date"><strong>Post Date:</strong></label>
+                        <input type="text" name="post_date" id="post_date" class="form-control @error('post_date') is-invalid @enderror" value="{{  Carbon\Carbon::parse($post->post_date)->format('d-m-Y') }}">
+                        @error('post_date')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="d-block mb-3" style="max-width: 250px;">
-                        <img src="{{ url('media/posts', $post->featured_image) }}" alt="" class="img-thumbnail" id="featured_image_preview">
+
+                    <div class="form-group mb-5">
+                        <label for="featured_image"><strong>Featured Image:</strong></label>
+                        <input type="file" class="dropify @error('featured_image') is-invalid @enderror" id="featured_image" name="featured_image" data-default-file="{{ url('/media/posts/', $post->featured_image) }}">
+                        <input type="hidden" name="current_featured_image" id="current_featured_image" value="{{ $post->featured_image }}">
+                        @error('featured_image')
+                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     {{-- <div class="form-group mb-5">
@@ -137,23 +144,13 @@
 </script>
 
 <script>
+    $('#post_date').datepicker();
+</script>
+
+<script>
     
-    function readUrl(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function(e) {
-                $('#featured_image_preview').attr('src', e.target.result);
-            }
-
-            reader.readAsDataURL(input.files[0]); // convert to base64 string
-        }
-    }
-
-    $(function(){
-        $('#featured_image').on('change', function() {
-            readUrl(input);
-        })
+    $(function() {
+        $('.dropify').dropify();
     })
 
     /*

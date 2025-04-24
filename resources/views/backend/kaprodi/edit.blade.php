@@ -42,7 +42,8 @@
                 <div class="card-body">
                     <div class="form-group mb-5">
                         <label for="photo"><strong>Photo:</strong></label>
-                        <input type="file" class="dropify @error('photo') is-invalid @enderror" id="photo" name="photo" onchange="readUrl(this);">
+                        <input type="file" class="dropify @error('photo') is-invalid @enderror" id="photo" name="photo" data-default-file="{{ url('/media/kaprodi/', $data->photo) }}">
+                        <input type="hidden" name="current_photo" value="{{ $data->photo }}">
                         @error('photo')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror

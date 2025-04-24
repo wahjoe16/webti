@@ -76,7 +76,7 @@ class FeatureController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'link' => $request->link,
-            'image' => $imageName?? $feature->image
+            'image' => $imageName?? $request->current_image
         ]);
 
         Alert::success('Sambutan feature updated!');

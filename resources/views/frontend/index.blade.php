@@ -10,7 +10,7 @@
             </div>
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 welcome-image-2">
                 <img src="{{ url('/media/banner/', $data_banner->image_2) }}" alt="" style="width: 250px; height:auto; border-radius: 10px; margin-bottom:8px;">
-                <img src="/media/banner/1741834195-IMG_2174-scaled.jpg" alt="" style="width: 250px; height:auto; border-radius: 10px;">
+                <img src="{{ url('/media/banner/', $data_banner->image_3) }}" alt="" style="width: 250px; height:auto; border-radius: 10px;">
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 px-lg-0">
                 <div class="welcome-description">

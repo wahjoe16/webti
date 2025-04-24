@@ -59,7 +59,7 @@ class KaprodiController extends Controller
         $request->validate([
             'name' =>'required',
             'periode' =>'required',
-            'photo' => 'required|image'
+            'photo' => 'image'
         ]);
 
         $data = Kaprodi::find($id);
@@ -74,7 +74,7 @@ class KaprodiController extends Controller
         $data->update([
             'name' => $request->name,
             'periode' => $request->periode,
-            'photo' => $photoName?? $data->photo
+            'photo' => $photoName?? $request->current_photo
         ]);
 
         Alert::success('Kaprodi successfully updated!');
