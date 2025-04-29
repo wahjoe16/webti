@@ -117,32 +117,7 @@
     </div>
 </section>
 
-<section id="features" class="py-5">
-    <div class="container-fluid px-4">
-        <div class="row">
-            @foreach ($data_feature as $df)
-                <div class="col-lg-6">
-                    <div class="card shadow mb-4" data-aos="zoom-in" data-aos-duration="1000">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="{{ url('/media/feature/', $df->image) }}" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8 feature-caption">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $df->name }}</h5>
-                                    <p class="card-text">{{ $df->description }}</p>
-                                    {{-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> --}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-<section id="posts" data-aos="fade-up" data-aos-duration="3000">
+<section id="posts" class="py-5" data-aos="fade-up" data-aos-duration="3000">
     <div class="container">
         <h3 class="text-center">Berita Teknik Industri</h3>
         <div class="row mt-4">
@@ -169,12 +144,37 @@
     </div>
 </section>
 
+<section id="features" class="py-5">
+    <div class="container-fluid px-4">
+        <div class="row">
+            @foreach ($data_feature as $df)
+                <div class="col-lg-6">
+                    <div class="card shadow mb-4" data-aos="zoom-in" data-aos-duration="1000">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="{{ url('/media/feature/', $df->image) }}" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8 feature-caption">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $df->name }}</h5>
+                                    <p class="card-text">{{ $df->description }}</p>
+                                    {{-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
 <section id="admission" class="py-5" data-aos="fade-left" data-aos-duration="3000">
     <div class="container admission-padding">
         <div class="col-md-6">
             <div class="admission-caption">
                 <h5>PENERIMAAN MAHASISWA BARU</h5>
-                <h1>Bergabunglah Bersama Kami Untuk Menjadi Ahli di Bidang Industri</h1>
+                <h1>Bergabunglah Bersama Kami di Teknik Industri Unisba</h1>
                 <a href="https://admission.unisba.ac.id/" class="btn">Admission Link <i class='bx bx-chevrons-right'></i></a>
             </div>
         </div>

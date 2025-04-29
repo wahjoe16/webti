@@ -137,11 +137,10 @@ class LandingPageController extends Controller
     {
         $data_kelompok = KelompokKeahlian::orderBy('nama_kelompok', 'ASC')->get();
         $data_lab = Lab::get();
-        $profil2015 = ProfilLulusan::paginate(3);
         $profil2020 = ProfilLulusan::latest()->paginate(4);
         // dd($profil2015);
 
-        return view('frontend.profil_lulusan', compact('data_lab', 'data_kelompok', 'profil2015', 'profil2020'));
+        return view('frontend.profil_lulusan', compact('data_lab', 'data_kelompok', 'profil2020'));
     }
 
     public function mataKuliah()

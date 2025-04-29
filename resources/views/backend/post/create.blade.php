@@ -70,6 +70,13 @@
                         @error('category_id')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror
+
+                        <a href="javascript:void(0)" class="btn btn-success btn-icon-split mt-3" id="btn-add-category">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-plus"></i>
+                            </span>
+                            <span class="text">Category</span>
+                        </a>
                     </div>
                     <div class="form-group mb-5">
                         <label for="post_date"><strong>Post Date:</strong></label>
@@ -128,6 +135,8 @@
     </div>
 </form>
 
+@include('backend.post.components.modal-create')
+
 @endsection
 
 @push('backend_script')
@@ -147,6 +156,60 @@
         $('.dropify').dropify();
     })
 </script>
+
+<script>
+    // event untuk modal pop up
+    $('body').on('click', '#btn-add-category', function(){
+        // buka modal
+        $('#modal-create').modal('show');
+    })
+
+    // event ketika save button
+    $('#store').click(function(e){
+        let name = $('#name').val();
+        let token = $("meta[name='csrf-token']").attr('content');
+
+        // ajax request
+        $.ajax({
+            url: '/administrator/category',
+            type: 'POST',
+            data: {
+                'name': name,
+                '_token': token
+            },
+            success: function(response){
+                // tampilkan sweet alert sukses message
+                Swal.fire({
+                    type: 'success',
+                    icon: 'success',
+                    title: `${response.message}`,
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+
+                // reload page after success
+                location.reload();
+
+                // clear form
+                $('#name').val('');
+
+                // close modal
+                $('#modal-create').modal('hide');
+            },
+            error: function(error){
+                if (error.responseJSON.name[0]){
+                    // show alert
+                    $('#alert-name').removeClass('d-none');
+                    $('#alert-name').addClass('d-block');
+
+                    // add message to alert
+                    $('#alert-name').html(error.responseJSON.name[0]);
+                }
+            }
+        })
+    }) 
+</script>
+
 
 <script>
     /*
@@ -208,5 +271,6 @@
     })
     */
 </script>
+
 
 @endpush

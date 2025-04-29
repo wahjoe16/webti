@@ -64,15 +64,15 @@
                         Download
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Panduan Kerja Praktik</a></li>
-                        <li><a class="dropdown-item" href="#">Panduan Tugas Akhir</a></li>
+                        <li><a class="dropdown-item" href="https://drive.google.com/file/d/1Hk-MsE8TIvjFHOy6iD9c64nXc570ZOXK/view?usp=drive_link">Panduan Kerja Praktik</a></li>
+                        <li><a class="dropdown-item" href="https://drive.google.com/drive/folders/1XZ51IBnTA71NIvPe68Q-V9wHzw60X7zU" target="_blank">Panduan Tugas Akhir</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Data Akreditasi</a></li>
                         <li><a class="dropdown-item" href="#">Sertifikat Akreditasi</a></li>
                     </ul>
                 </li>
                 <li class="nav-item px-3 px-lg-0 py-2 py-lg-4" style="margin-left: 90px;">
-                    <a href="https://admission.unisba.ac.id/" class="btn btn-lg btn-admission">Admission <i class='bx bx-chevrons-right'></i></a>
+                    <a href="https://admission.unisba.ac.id/" target="_blank" class="btn btn-lg btn-admission">Admission <i class='bx bx-chevrons-right'></i></a>
                 </li>
             </ul>
             

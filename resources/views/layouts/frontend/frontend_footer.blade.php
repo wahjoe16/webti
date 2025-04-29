@@ -39,9 +39,9 @@
             <div class="col-lg-3">
                 <h4>Subscribe</h4>
                 <hr class="py-3">
-                <a href=""><i class='bx bxl-youtube'></i></a>
-                <a href=""><i class='bx bxl-tiktok'></i></a>
-                <a href=""><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.youtube.com/c/TIUnisba" target="_blank"><i class='bx bxl-youtube'></i></a>
+                <a href="https://www.tiktok.com/discover/teknik-industri-unisba" target="_blank"><i class='bx bxl-tiktok'></i></a>
+                <a href="https://www.instagram.com/tiunisba/?hl=en" target="_blank"><i class='bx bxl-instagram'></i></a>
                 <hr>
             </div>
             <!-- /.col-lg-4 -->
