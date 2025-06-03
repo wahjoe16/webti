@@ -117,6 +117,16 @@
     </div>
 </section>
 
+{{-- <section id="insta-feed" class="py-5" data-aos="fade-up" data-aos-duration="2000">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <iframe src="https://www.instagram.com/tiunisba?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+</section> --}}
+
 <section id="posts" class="py-5" data-aos="fade-up" data-aos-duration="3000">
     <div class="container">
         <h3 class="text-center">Berita Teknik Industri</h3>
@@ -139,6 +149,16 @@
             </div>
             <div class="text-center mt-3">
                 <a href="{{ route('landing.listPost') }}" class="btn btn-more-posts">Selengkapnya <i class='bx bx-chevrons-right'></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="video_profile" class="py-5" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/yIvTdAvOuBg?si=rwUEOUKpKomNBdxe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
     </div>

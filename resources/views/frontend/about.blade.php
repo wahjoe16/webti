@@ -23,7 +23,7 @@
                 <h6>SEJARAH</h6>
                 <h1>Ketua Program Studi</h1>
                 <hr>
-                <div class="row row-cols-1 row-cols-md-3 g-4 mt-3" data-aos="fade-up" data-aos-duration="3000">
+                <div class="row row-cols-1 row-cols-md-4 g-4 mt-3" data-aos="fade-up" data-aos-duration="3000">
                     @foreach ($data_kaprodi as $dk)
                         <div class="col">
                             <div class="card shadow h-100">
